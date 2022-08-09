@@ -38,7 +38,7 @@ public class GuildMemberJoin extends ListenerAdapter {
             EmbedBuilder eb = new EmbedBuilder();
             eb.setColor(colors[x]);
             eb.setTitle(":heart:-wilkommen auf " + guild.getName() + ":wave:");
-            eb.setDescription("Wenn du fragen :question: hast, schreibe mir einfach eine Nachricht!");
+            eb.setDescription("**Wenn du fragen :question: hast, schreibe mir einfach eine Nachricht!**");
             eb.addField("Das Team wünscht dir viel spaß auf dem Server :partying_face:","", false);
             user.openPrivateChannel().flatMap((privateChannel -> privateChannel.sendMessageEmbeds(eb.build()))).queue();
         }
