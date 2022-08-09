@@ -23,7 +23,7 @@ public class GuildMemberRemove extends ListenerAdapter {
         eb.setColor(colors[x]);
         eb.setTitle(":sob: Tschüss :wave:");
         eb.setDescription(":wave: Der :busts_in_silhouette: user " + e.getUser().getAsMention() + " hat das Raumschiff wieder verlassen :sob:!");
-        eb.setThumbnail(e.getMember().getEffectiveAvatarUrl());
+        eb.setThumbnail(Objects.requireNonNull(e.getUser()).getEffectiveAvatarUrl());
 
         e.getGuild().getTextChannelsByName("\uD83D\uDC4B-bye", true).get(0).sendMessageEmbeds(eb.build()).queue();
     }

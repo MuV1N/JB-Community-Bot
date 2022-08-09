@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="TheRealBot:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c52da872-d31a-43e1-a865-4ec8e1bd7f5c" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/muv1n/theRealBot/events/GuildMemberJoin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/muv1n/theRealBot/events/GuildMemberRemove.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/muv1n/theRealBot/events/PrivateMessageReceive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/muv1n/theRealBot/BotMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/muv1n/theRealBot/BotMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/muv1n/theRealBot/BotMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/muv1n/theRealBot/events/GuildMemberJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/muv1n/theRealBot/events/GuildMemberJoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/muv1n/theRealBot/events/GuildMemberRemove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/muv1n/theRealBot/events/GuildMemberRemove.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,17 +48,22 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/Desktop/Coding/java/mc/Network/Lobby",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "last_opened_file_path": "D:/Desktop/Coding/forother/TheRealJosh/TheRealBot/src/main/resources",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Desktop\Coding\forother\TheRealJosh\TheRealBot\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.BotMain">
     <configuration name="BotMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.muv1n.theRealBot.BotMain" />
-      <module name="TheRealJoshBot" />
+      <module name="TheRealBot" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="de.muv1n.theRealBot.*" />
@@ -62,9 +74,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TheRealBot.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/TheRealBot_jar/TheRealBot.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TheRealJoshBot-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/TheRealJoshBot-1.0-SNAPSHOT.jar" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.BotMain" />
+        <item itemvalue="JAR Application.TheRealBot.jar" />
+        <item itemvalue="JAR Application.TheRealJoshBot-1.0-SNAPSHOT.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -101,5 +123,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NoClassDefFoundError" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
