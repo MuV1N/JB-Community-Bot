@@ -1,6 +1,7 @@
 package de.muv1n.theRealBot.events;
 
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberRemoveEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
@@ -14,6 +15,8 @@ public class GuildMemberRemove extends ListenerAdapter {
     @Override
     public void onGuildMemberRemove(@NotNull GuildMemberRemoveEvent e) {
 
+        TextChannel channel = e.getGuild().getTextChannelsByName("\uD83D\uDC4B┃willkommen", false).get(0);
+
         Random i = new Random();
         int upperbound = 13;
         int x = i.nextInt(upperbound);
@@ -25,6 +28,6 @@ public class GuildMemberRemove extends ListenerAdapter {
         eb.setDescription(":wave: Der :busts_in_silhouette: user " + e.getUser().getAsMention() + " hat das Raumschiff wieder verlassen :sob:!");
         eb.setThumbnail(Objects.requireNonNull(e.getUser()).getEffectiveAvatarUrl());
 
-        e.getGuild().getTextChannelsByName("\uD83D\uDC4B-bye", true).get(0).sendMessageEmbeds(eb.build()).queue();
+        channel.sendMessageEmbeds(eb.build()).queue();
     }
 }

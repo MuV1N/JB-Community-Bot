@@ -14,6 +14,9 @@ import java.util.Random;
 public class GuildMemberJoin extends ListenerAdapter {
     @Override
     public void onGuildMemberJoin(@NotNull GuildMemberJoinEvent e) {
+
+        TextChannel channel = e.getGuild().getTextChannelsByName("\uD83D\uDC4B┃willkommen", true).get(0);
+
         Random i = new Random();
         int upperbound = 13;
         int x = i.nextInt(upperbound);
@@ -24,9 +27,9 @@ public class GuildMemberJoin extends ListenerAdapter {
         eb.setDescription(":wave: " + e.getMember().getAsMention() + " ist erfolgreich auf dem Raumschiff :rocket: der TheRealJosh Community gelandet :partying_face:");
         eb.setThumbnail(e.getUser().getEffectiveAvatarUrl());
         eb.setTitle(":heart:-wilkommen :wave:");
-        eb.addField("Du bist der " + e.getGuild().getMemberCount() + " :busts_in_silhouette: user auf diesem Raumschiff!", "", false);
-        //TODO: give role by join to verify (waiting for Joshs answer)
-        e.getGuild().getTextChannelsByName("\uD83D\uDC4B-welcome", true).get(0).sendMessageEmbeds(eb.build()).queue();
+        eb.addField("Er ist der " + e.getGuild().getMemberCount() + " :busts_in_silhouette: Nutzer auf diesem Raumschiff!", "", false);
+        //TODO: give role by join to verify (waiting for J0-shs answer)
+        channel.sendMessageEmbeds(eb.build()).queue();
         sendPrivateMessage(e.getUser(), e.getGuild());
         }
         public void sendPrivateMessage(User user, Guild guild){

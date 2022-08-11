@@ -5,6 +5,7 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.ChannelType;
 import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -24,12 +25,18 @@ public class PrivateMessageReceive extends ListenerAdapter {
         }
     }
     public void sendMessage(String message, User user, JDA jda){
+
+        Guild theRealJ0sh = jda.getGuildsByName("TheRealj0sh", false).get(0);
+        Guild test = jda.getGuildsByName("Bot Test", false).get(0);
+
+        TextChannel channel = theRealJ0sh.getTextChannelsByName("\uD83D\uDCD9┃bot-private-messages", false).get(0);
+
         EmbedBuilder eb = new EmbedBuilder();
         eb.setTitle(":exclamation: PRIVATE MESSAGE :exclamation:");
         eb.setDescription("Der Nutzer " + user.getAsMention() + " hat eine Private Message gesendet!");
         eb.addField(message , "", false);
-        Guild guild = jda.getGuildsByName("TESTIN VON BOTS", false).get(0);
-        guild.getTextChannelsByName("\uD83D\uDCD9┃bot-private-messages", false).get(0).sendMessageEmbeds(eb.build()).queue();
+
+        channel.sendMessageEmbeds(eb.build()).queue();
 
 
 
