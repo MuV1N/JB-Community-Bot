@@ -53,7 +53,7 @@ public class ReactionRoleButon extends ListenerAdapter {
 
         eb.setColor(Color.RED);
         eb.setTitle("Rolle entfernt");
-        eb.addField("Dir wurde die Rolle **" + role.getName() + "** entzogen!", "", false);
+        eb.addField("Dir wurde die Rolle **<@&" + role.getName() + ">** entzogen!", "", false);
         eb.addField("Das bedeutet, dass du jetzt keine " + service + "-Benachrichtigungen mehr bekommst!", "", false);
 
         return eb;
@@ -63,7 +63,7 @@ public class ReactionRoleButon extends ListenerAdapter {
 
         eb.setColor(Color.GREEN);
         eb.setTitle("Rolle hinzugefügt");
-        eb.addField("Du hast die Rolle **" + role.getName() + "** hinzugefügt bekommen!", "", false);
+        eb.addField("Du hast die Rolle **<@&" + role.getName() + ">** hinzugefügt bekommen!", "", false);
         eb.addField("Das bedeutet, dass du jetzt " + service + "-Benachrichtigungen bekommst!", "", false);
 
         return eb;

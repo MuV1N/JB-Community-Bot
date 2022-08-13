@@ -2,6 +2,7 @@ package de.muv1n.theRealBot.slashCommands;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.events.interaction.command.CommandAutoCompleteInteractionEvent;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -22,15 +23,20 @@ public class ReactionRoleMessage extends ListenerAdapter {
         if (!e.getName().equals("sendreactionmessage")) return;
 
         if (e.getOption("type").getAsString().equals("roles")){
-            e.replyEmbeds(sendMessageEmbeds(e).build()).addActionRow(
+            e.replyEmbeds(sendMessageEmbedsRole(e).build()).addActionRow(
                     Button.success("twitch", "Twitch-Benachrichtigungen"),
                     Button.success("youtube", "YouTube-Benachrichtigungen"),
                     Button.success("discord", "Discord-Benachrichtigungen")
             ).queue();
         }
+        if (e.getOption("type").getAsString().equals("ticket")){
+            e.replyEmbeds(sendMessageEmbedsTickets(e).build()).addActionRow(
+                    Button.success("ticket", "Erstelle ein Ticket")
+            ).queue();
+        }
 
     }
-    private String[] words = new String[]{"roles"};
+    private String[] words = new String[]{"roles", "ticket"};
 
     @Override
     public void onCommandAutoCompleteInteraction(@NotNull CommandAutoCompleteInteractionEvent e) {
@@ -43,20 +49,33 @@ public class ReactionRoleMessage extends ListenerAdapter {
 
     }
 
-    public EmbedBuilder sendMessageEmbeds(SlashCommandInteractionEvent e){
-
-        Member member = Objects.requireNonNull(e.getGuild()).getMemberById(566521375842631686L);
+    public EmbedBuilder sendMessageEmbedsRole(SlashCommandInteractionEvent e) {
+        Member memmber = Objects.requireNonNull(e.getGuild()).getMemberById(566521375842631686L);
+        Role dc = Objects.requireNonNull(e.getGuild()).getRoleById(936616389811245056L);
+        Role yt = Objects.requireNonNull(e.getGuild()).getRoleById(936616241358078033L);
+        Role tw = Objects.requireNonNull(e.getGuild()).getRoleById(934533413204029510L);
         EmbedBuilder eb = new EmbedBuilder();
         eb.setColor(Color.cyan);
         eb.setTitle("Rollen Auswahl");
         eb.setDescription("Du kannst auswählen, welche Benachrichtigungs Rollen du haben möchtest!");
-        assert member != null;
-        eb.addField("Du möchtest Benachrichtigungen bekommen, wenn **TheRealJosh** auf Twitch live geht, dann klicke auf den Knopf mit dem Namen Twitch-Benachrichtigungen!","", false);
-        eb.addField("Du möchtest Benachrichtigungen bekommen, wenn **TheRealJosh** ein neues YouTube video hochgeladen hat, dann klicke auf den Knopf mit dem Namen YouTube-Benachrichtigungen!","", false);
-        eb.addField("Du möchtest Benachrichtigungen bekommen, wenn etwas auf diesem Discord Server geändert wird, dann klicke auf den Knopf mit dem Namen Discord-Benachrichtigungen!","", false);
+        assert memmber != null;
+        eb.addField("Twitch-Benachrichtigungen","Du möchtest Benachrichtigungen bekommen, wenn **<@" + memmber.getId() + ">** auf Twitch live geht, dann klicke auf den Knopf mit dem Namen Twitch-Benachrichtigungen!", false);
+        eb.addField("YouTube-Benachrichtigungen","Du möchtest Benachrichtigungen bekommen, wenn **<@" + memmber.getId() + ">** ein neues YouTube video hochgeladen hat, dann klicke auf den Knopf mit dem Namen YouTube-Benachrichtigungen!", false);
+        eb.addField("Discord-Benachrichtigungen","Du möchtest Benachrichtigungen bekommen, wenn etwas auf diesem Discord Server geändert wird, dann klicke auf den Knopf mit dem Namen Discord-Benachrichtigungen!", false);
 
 
         return eb;
+    }
+    public EmbedBuilder sendMessageEmbedsTickets(SlashCommandInteractionEvent e){
+    EmbedBuilder eb = new EmbedBuilder();
+
+    eb.setTitle("Support Ticket");
+    eb.setColor(Color.GREEN);
+    eb.setDescription("Du benötigst Hilfe, dann erstell ein Ticket!");
+    eb.addField("Wie erstelle ich ein Ticket?", "Du kannst ein Ticket erstellen, indem du unter dieser Nachricht auf den Knopf mit dem Namen 'Erstelle ein Ticket'", false);
+
+
+    return eb;
     }
 
 }
