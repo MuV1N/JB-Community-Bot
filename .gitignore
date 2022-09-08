@@ -38,4 +38,4 @@ build/
 ### Mac OS ###
 .DS_Store
 /out/artifacts/TheRealBot_jar/TheRealBot.jar
-/src/main/java/de/muv1n/theRealBot/Token.java
+/src/main/java/de/muv1n/jbBot/Token.java

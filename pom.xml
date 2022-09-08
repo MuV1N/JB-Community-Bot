@@ -20,7 +20,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>de.muv1n.theRealBot.BotMain</mainClass>
+                            <mainClass>de.muv1n.jbBot.BotMain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
