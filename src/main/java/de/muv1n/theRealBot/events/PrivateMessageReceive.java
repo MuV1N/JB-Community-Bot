@@ -26,11 +26,9 @@ public class PrivateMessageReceive extends ListenerAdapter {
     }
     public void sendMessage(String message, User user, JDA jda){
 
-        Guild theRealJ0sh = jda.getGuildsByName("TheRealj0sh", false).get(0);
-        Guild test = jda.getGuildsByName("Bot Test", false).get(0);
+        Guild theRealJ0sh = jda.getGuildById(934200357532336230L);
 
-        TextChannel channel = theRealJ0sh.getTextChannelsByName("\uD83D\uDCD9┃bot-private-messages", false).get(0);
-
+        TextChannel channel = theRealJ0sh.getTextChannelById(1007036471028498532L);
         EmbedBuilder eb = new EmbedBuilder();
         eb.setTitle(":exclamation: PRIVATE MESSAGE :exclamation:");
         eb.setDescription("Der Nutzer " + user.getAsMention() + " hat eine Private Message gesendet!");

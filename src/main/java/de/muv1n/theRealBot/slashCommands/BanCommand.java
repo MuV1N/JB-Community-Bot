@@ -38,8 +38,7 @@ public class BanCommand extends ListenerAdapter {
         EmbedBuilder eb = new EmbedBuilder();
         eb.setColor(Color.RED);
         eb.setTitle(":hammer:Du wurdest gebannt:hammmer:");
-        eb.addField("Die Begründung ist:", "", true);
-        eb.addField("**" + reason + "**", "", false);
+        eb.addField("Die Begründung ist:", "**" + reason + "**", false);
         user.openPrivateChannel().flatMap((privateChannel -> privateChannel.sendMessageEmbeds(eb.build()))).queue();
     }
     public void sendPrivateMessageWithoutReason(User user, Guild guild){
@@ -54,8 +53,7 @@ public class BanCommand extends ListenerAdapter {
         er.setTitle(":hammer:Erfolgreich gebannt:hammer:");
         er.setColor(Color.RED);
         er.addField("Der Nutzer " + user.getName() + " wurde von " + Objects.requireNonNull(e.getMember()).getAsMention() + " gebannt!", "", false);
-        er.addField("Die Begründung ist:", "", false);
-        er.addField("**" + reason + "**", "", false);
+        er.addField("Die Begründung ist:", "**" + reason + "**", false);
         return er;
     }
     public EmbedBuilder sendEmbedWithoutReason(User user, SlashCommandInteractionEvent e){

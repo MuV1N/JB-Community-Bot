@@ -3,6 +3,7 @@ package de.muv1n.theRealBot.events;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.commands.Command;
 import net.dv8tion.jda.api.interactions.commands.DefaultMemberPermissions;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
@@ -29,6 +30,10 @@ public class GuildReady extends ListenerAdapter {
                 .addOption(OptionType.USER, "name", "Den Nutzer, welcher gekickt werden soll", true, false)
                 .addOption(OptionType.STRING, "begründung", "Wieso dieser Spieler gekickt wird", false, false)
                 .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.BAN_MEMBERS)));
+        /*commandData.add(Commands.slash("", "")
+                .addOption(OptionType.USER, "user", "Entscheide welcher User getimeoutet wird")
+                .addOption()
+                .addOption(OptionType.STRING, "reason", "Begründung"));*/
 
         commandData.add(Commands.slash("sendreactionmessage", "Sende eine Nachrich mit Reactions Buttons als Anhang!")
                 .addOption(OptionType.STRING, "type", "Der Nachrichtentyp", true, true)

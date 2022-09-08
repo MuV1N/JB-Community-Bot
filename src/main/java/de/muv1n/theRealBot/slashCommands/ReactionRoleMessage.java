@@ -3,6 +3,7 @@ package de.muv1n.theRealBot.slashCommands;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
+import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.interaction.command.CommandAutoCompleteInteractionEvent;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -31,7 +32,7 @@ public class ReactionRoleMessage extends ListenerAdapter {
         }
         if (e.getOption("type").getAsString().equals("ticket")){
             e.replyEmbeds(sendMessageEmbedsTickets(e).build()).addActionRow(
-                    Button.success("ticket", "Erstelle ein Ticket")
+                    Button.success("ticket", "Erstelle ein Ticket").withEmoji(Emoji.fromUnicode("\uD83D\uDCE9"))
             ).queue();
         }
 
@@ -72,7 +73,7 @@ public class ReactionRoleMessage extends ListenerAdapter {
     eb.setTitle("Support Ticket");
     eb.setColor(Color.GREEN);
     eb.setDescription("Du benötigst Hilfe, dann erstell ein Ticket!");
-    eb.addField("Wie erstelle ich ein Ticket?", "Du kannst ein Ticket erstellen, indem du unter dieser Nachricht auf den Knopf mit dem Namen 'Erstelle ein Ticket'", false);
+    eb.addField("Wie erstelle ich ein Ticket?", "Du kannst ein Ticket erstellen, in dem du unter dieser Nachricht auf den Knopf mit dem Namen 'Erstelle ein Ticket' drückst!", false);
 
 
     return eb;

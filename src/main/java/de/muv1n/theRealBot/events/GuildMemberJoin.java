@@ -24,11 +24,10 @@ public class GuildMemberJoin extends ListenerAdapter {
                 Color.RED, Color.WHITE, Color.YELLOW};
         EmbedBuilder eb = new EmbedBuilder();
         eb.setColor(colors[x]);
-        eb.setDescription(":wave: " + e.getMember().getAsMention() + " ist erfolgreich auf dem Raumschiff :rocket: der TheRealJosh Community gelandet :partying_face:");
+        eb.setDescription(":wave: " + e.getMember().getAsMention() + " ist erfolgreich auf dem Discord Server der JB Community gelandet :partying_face:");
         eb.setThumbnail(e.getUser().getEffectiveAvatarUrl());
         eb.setTitle(":heart:-wilkommen :wave:");
         eb.addField("Er ist der " + e.getGuild().getMemberCount() + " :busts_in_silhouette: Nutzer auf diesem Raumschiff!", "", false);
-        //TODO: give role by join to verify (waiting for J0-shs answer)
         channel.sendMessageEmbeds(eb.build()).queue();
         sendPrivateMessage(e.getUser(), e.getGuild());
         }
