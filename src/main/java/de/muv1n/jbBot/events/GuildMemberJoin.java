@@ -22,6 +22,7 @@ public class GuildMemberJoin extends ListenerAdapter {
         int x = i.nextInt(upperbound);
         Color[] colors = {Color.GREEN, Color.BLACK, Color.BLUE, Color.CYAN, Color.DARK_GRAY, Color.LIGHT_GRAY, Color.GRAY, Color.MAGENTA, Color.ORANGE, Color.PINK,
                 Color.RED, Color.WHITE, Color.YELLOW};
+        e.getGuild().addRoleToMember(e.getUser(), e.getGuild().getRoleById(1017423926604877865L)).queue();
         EmbedBuilder eb = new EmbedBuilder();
         eb.setColor(colors[x]);
         eb.setDescription(":wave: " + e.getMember().getAsMention() + " ist erfolgreich auf dem Discord Server der JB Community gelandet :partying_face:");
